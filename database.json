@@ -1,110 +1,86 @@
 {
-  "menu": [
-    {
-      "id": 1,
-      "title": "Bryggkaffe",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    },
-    {
-      "id": 2,
-      "title": "Caffè Doppio",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 3,
-      "title": "Cappuccino",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 4,
-      "title": "Latte Macchiato",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 5,
-      "title": "Kaffe Latte",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 54
-    },
-    {
-      "id": 6,
-      "title": "Cortado",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    }
-  ],
-  "orders": [
-    {
-      "id": [
-        2,
-        3
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Caffè Doppio"
-      ],
-      "price": 98,
-      "ETA": 0,
-      "orderNumber": 0,
-      "userId": "dBr7"
-    },
-    {
-      "id": [
-        2,
-        3
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Cappuccino"
-      ],
-      "price": 98,
-      "ETA": "3:32 PM",
-      "orderNumber": "UMuBV",
-      "userId": "Pquk"
-    },
-    {
-      "id": [
-        5,
-        6
-      ],
-      "title": [
-        "Kaffe Latte",
-        "Cortado"
-      ],
-      "price": 93,
-      "ETA": "3:39 PM",
-      "orderNumber": "kD3sz",
-      "userId": "Pquk"
-    },
-    {
-      "id": [
-        1,
-        3
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Cappuccino"
-      ],
-      "price": 88,
-      "ETA": "4:07 PM",
-      "orderNumber": "DdeDP",
-      "userId": "dBr7"
-    }
-  ],
-  "users": [
-    {
-      "id": "Pquk",
-      "username": "Ann",
-      "password": 123
-    },
-    {
-      "id": "dBr7",
-      "username": "William",
-      "password": 123
-    }
-  ]
+    "menu": [
+        {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        },
+        {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 3,
+            "title": "Cappuccino",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 4,
+            "title": "Latte Macchiato",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 5,
+            "title": "Kaffe Latte",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 54
+        },
+        {
+            "id": 6,
+            "title": "Cortado",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        }
+    ],
+    "orders": [
+        {
+            "id": [1, 3],
+            "title": ["Bryggkaffe", "Cappuccino"],
+            "price": 88,
+            "ETA": "Apr 30, 2021 7:34 PM",
+            "orderNumber": "2KP7Z",
+            "userId": "dBr7"
+        },
+        {
+            "id": [1, 3],
+            "title": ["Bryggkaffe", "Cappuccino"],
+            "price": 88,
+            "ETA": "Apr 30, 2021 7:34 PM",
+            "orderNumber": "HzaqD",
+            "userId": "Pquk"
+        },
+        {
+            "id": [5, 6],
+            "title": ["Kaffe Latte", "Cortado"],
+            "price": 93,
+            "ETA": "Apr 30, 2021 7:35 PM",
+            "orderNumber": "GSToL",
+            "userId": "Pquk"
+        },
+        {
+            "id": [2, 3],
+            "title": ["Caffè Doppio", "Cappuccino"],
+            "price": 98,
+            "ETA": "Apr 30, 2021 7:37 PM",
+            "orderNumber": "v48G1",
+            "userId": "dBr7"
+        }
+    ],
+    "users": [
+        {
+            "id": "Pquk",
+            "username": "Ann",
+            "password": 123
+        },
+        {
+            "id": "dBr7",
+            "username": "William",
+            "password": 123
+        }
+    ]
 }

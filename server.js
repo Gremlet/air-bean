@@ -37,7 +37,7 @@ app.post('/api/order', (req, res) => {
             id: userOrder.id,
             title: title,
             price: price,
-            ETA: moment().add(15, 'm').format('LT'),
+            ETA: moment().add(15, 'm').format('lll'),
             orderNumber: nanoid(5),
             userId: userOrder.userId,
         })
