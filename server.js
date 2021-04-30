@@ -4,6 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json')
 const db = lowdb(adapter)
 const { nanoid } = require('nanoid')
+const moment = require('moment')
 const port = 8080
 
 const app = express()
@@ -17,9 +18,30 @@ app.get('/api/coffee', (req, res) => {
 
 app.post('/api/order', (req, res) => {
     let userOrder = req.body
+    let price = 0
+    let title = []
+    for (let i = 0; i < userOrder.id.length; i++) {
+        let coffee = db.get('menu').find({ id: userOrder.id[i] }).value()
+
+        title.push(coffee.title)
+        price = price + coffee.price
+    }
+    console.log(price)
+    console.log(title)
+    console.log(moment().add(15, 'm').format('LT'))
 
     console.log(userOrder)
-    let order = db.get('orders').push(userOrder).write()
+    let order = db
+        .get('orders')
+        .push({
+            id: userOrder.id,
+            title: title,
+            price: price,
+            ETA: moment().add(15, 'm').format('LT'),
+            orderNumber: nanoid(5),
+            userId: userOrder.userId,
+        })
+        .write()
     res.json(order)
 })
 
@@ -35,13 +57,14 @@ app.post('/api/account', (req, res) => {
 
 app.get('/api/order/:id', (req, res) => {
     ID = req.params.id
-    const testOrder = {}
-    let order = db.get('orders').find({ userId: ID }).value()
+    let order = []
+    let orderList = db.get('orders').value()
+    for (let i = 0; i < orderList.length; i++) {
+        order = db.get('orders').filter({ userId: ID }).value()
+    }
+
     console.log(order)
-    // let menuID = db.get('menu').find({ id: order.id }).value()
-    // console.log(menuID)
-    // let price = order.id.reduce((a, b) => a + b)
-    // console.log(price)
+
     res.json(order)
 })
 
