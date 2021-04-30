@@ -16,6 +16,7 @@ app.get('/api/coffee', (req, res) => {
 
 app.post('/api/order', (req, res) => {
     userOrder = req.body
+
     console.log(userOrder)
     let order = db.get('orders').push(userOrder).write()
     res.json(order)
