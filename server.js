@@ -20,29 +20,27 @@ app.post('/api/order', (req, res) => {
     let userOrder = req.body
     let price = 0
     let title = []
+
     for (let i = 0; i < userOrder.id.length; i++) {
         let coffee = db.get('menu').find({ id: userOrder.id[i] }).value()
 
         title.push(coffee.title)
         price = price + coffee.price
     }
-    console.log(price)
-    console.log(title)
-    console.log(moment().add(15, 'm').format('LT'))
 
     console.log(userOrder)
-    let order = db
-        .get('orders')
-        .push({
-            id: userOrder.id,
-            title: title,
-            price: price,
-            ETA: moment().add(15, 'm').format('lll'),
-            orderNumber: nanoid(5),
-            userId: userOrder.userId,
-        })
-        .write()
-    res.json(order)
+    order = {
+        id: userOrder.id,
+        title: title,
+        price: price,
+        ETA: moment().add(15, 'm').format('lll'),
+        orderNumber: nanoid(5),
+        userId: userOrder.userId,
+    }
+
+    db.get('orders').push(order).write()
+
+    res.json({ ETA: order.ETA, orderNumber: order.orderNumber })
 })
 
 app.post('/api/account', (req, res) => {
@@ -56,16 +54,26 @@ app.post('/api/account', (req, res) => {
 })
 
 app.get('/api/order/:id', (req, res) => {
-    ID = req.params.id
-    let order = []
-    let orderList = db.get('orders').value()
-    for (let i = 0; i < orderList.length; i++) {
-        order = db.get('orders').filter({ userId: ID }).value()
+    let ID = req.params.id
+    let order = db.get('orders').filter({ userId: ID }).value()
+    let completeOrder = []
+
+    order.forEach((element) => {
+        if (moment(element.ETA) < moment()) {
+            element.status = 'Delivered'
+        }
+        if (moment(element.ETA) > moment()) {
+            element.status = 'Drone on the way'
+        }
+        completeOrder.push(element)
+        console.log(moment(element.ETA) < moment())
+    })
+
+    if (order.length === 0) {
+        console.log('No user with that ID found')
     }
 
-    console.log(order)
-
-    res.json(order)
+    res.json(completeOrder)
 })
 
 function initiateDatabase() {
