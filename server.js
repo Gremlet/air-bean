@@ -4,7 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json')
 const db = lowdb(adapter)
 const { nanoid } = require('nanoid')
-const moment = require('moment')
+const dayjs = require('dayjs')
 const port = 8080
 
 const app = express()
@@ -33,7 +33,7 @@ app.post('/api/order', (req, res) => {
         id: userOrder.id,
         title: title,
         price: price,
-        ETA: moment().add(15, 'm').format('lll'),
+        ETA: dayjs().add(15, 'm').format('MMM D, YYYY h:mm A'),
         orderNumber: nanoid(5),
         userId: userOrder.userId,
     }
@@ -59,14 +59,14 @@ app.get('/api/order/:id', (req, res) => {
     let completeOrder = []
 
     order.forEach((element) => {
-        if (moment(element.ETA) < moment()) {
+        if (dayjs(element.ETA) < dayjs()) {
             element.status = 'Delivered'
         }
-        if (moment(element.ETA) > moment()) {
+        if (dayjs(element.ETA) > dayjs()) {
             element.status = 'Drone on the way'
         }
         completeOrder.push(element)
-        console.log(moment(element.ETA) < moment())
+        console.log(dayjs(element.ETA) < dayjs())
     })
 
     if (order.length === 0) {
@@ -82,7 +82,7 @@ function initiateDatabase() {
     db.defaults({ users: [] }).write()
 }
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log('Server started')
     initiateDatabase()
 })
