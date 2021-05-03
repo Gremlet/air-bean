@@ -48,40 +48,8 @@
         "Kaffe Latte"
       ],
       "price": 103,
-      "ETA": "May 2, 2021 11:40 PM",
-      "orderNumber": "iE4mW",
-      "userId": "Pquk",
-      "status": "Delivered"
-    },
-    {
-      "id": [
-        2,
-        5
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Kaffe Latte"
-      ],
-      "price": 103,
-      "ETA": "May 2, 2021 10:30 PM",
-      "orderNumber": "iE4bH",
-      "userId": "Pquk",
-      "status": "Delivered"
-    },
-    {
-      "id": [
-        2,
-        5,
-        1
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Kaffe Latte",
-        "Bryggkaffe"
-      ],
-      "price": 142,
-      "ETA": "May 2, 2021 11:54 PM",
-      "orderNumber": "epMEE",
+      "ETA": "May 3, 2021 5:22 PM",
+      "orderNumber": "meKED",
       "userId": "Pquk",
       "status": "Delivered"
     },
@@ -93,34 +61,78 @@
         "Bryggkaffe"
       ],
       "price": 39,
-      "ETA": "May 2, 2021 11:55 PM",
-      "orderNumber": "KnUJ8",
-      "userId": "dBr7"
+      "ETA": "May 3, 2021 5:16 PM",
+      "orderNumber": "ve_l5",
+      "userId": "Pquk",
+      "status": "Delivered"
     },
     {
       "id": [
-        5,
+        1,
+        3,
+        5
+      ],
+      "title": [
+        "Bryggkaffe",
+        "Cappuccino",
+        "Kaffe Latte"
+      ],
+      "price": 142,
+      "ETA": "May 3, 2021 5:22 PM",
+      "orderNumber": "P0vko",
+      "userId": "dBr7",
+      "status": "Delivered"
+    },
+    {
+      "id": [
         6
       ],
       "title": [
-        "Kaffe Latte",
         "Cortado"
       ],
-      "price": 93,
-      "ETA": "May 2, 2021 11:56 PM",
-      "orderNumber": "i9ERr",
+      "price": 39,
+      "ETA": "May 3, 2021 5:17 PM",
+      "orderNumber": "JWoRC",
+      "userId": "dBr7",
+      "status": "Delivered"
+    },
+    {
+      "id": [
+        3
+      ],
+      "title": [
+        "Cappuccino"
+      ],
+      "price": 49,
+      "ETA": "May 3, 2021 5:20 PM",
+      "orderNumber": "4RZ7r",
+      "userId": "Pquk",
+      "status": "Delivered"
+    },
+    {
+      "id": [
+        4,
+        5
+      ],
+      "title": [
+        "Latte Macchiato",
+        "Kaffe Latte"
+      ],
+      "price": 103,
+      "ETA": "May 3, 2021 5:37 PM",
+      "orderNumber": "hKxtV",
       "userId": "dBr7"
     },
     {
       "id": [
-        2
+        6
       ],
       "title": [
-        "Caffè Doppio"
+        "Cortado"
       ],
-      "price": 49,
-      "ETA": "May 3, 2021 12:22 AM",
-      "orderNumber": "Jx4KF",
+      "price": 39,
+      "ETA": "May 3, 2021 5:46 PM",
+      "orderNumber": "BZXe3",
       "userId": "Pquk"
     }
   ],

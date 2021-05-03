@@ -28,22 +28,30 @@ app.post('/api/order', (req, res) => {
         price = price + coffee.price
     }
 
-    console.log(userOrder)
-    order = {
+    let order = {
         id: userOrder.id,
         title: title,
         price: price,
-        ETA: dayjs().add(15, 'm').format('MMM D, YYYY h:mm A'),
+        ETA: dayjs()
+            .add(Math.floor(Math.random() * (15 - 5 + 1)) + 5, 'm')
+            .format('MMM D, YYYY h:mm A'),
         orderNumber: nanoid(5),
         userId: userOrder.userId,
     }
 
-    db.get('orders').push(order).write()
-
-    res.json({ ETA: order.ETA, orderNumber: order.orderNumber })
+    // validate userId
+    let validatedId = db.get('users').find({ id: userOrder.userId }).value()
+    if (validatedId) {
+        db.get('orders').push(order).write()
+        res.json({ ETA: order.ETA, orderNumber: order.orderNumber })
+    } else {
+        console.log('User not found')
+        res.end()
+    }
 })
 
 app.post('/api/account', (req, res) => {
+    // add validation
     let userAccount = req.body
     let account = db
         .get('users')
