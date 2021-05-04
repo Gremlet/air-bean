@@ -20,6 +20,7 @@ app.post('/api/order', (req, res) => {
     let userOrder = req.body
     let price = 0
     let title = []
+    let result = {}
 
     for (let i = 0; i < userOrder.id.length; i++) {
         let coffee = db.get('menu').find({ id: userOrder.id[i] }).value()
@@ -43,28 +44,47 @@ app.post('/api/order', (req, res) => {
     let validatedId = db.get('users').find({ id: userOrder.userId }).value()
     if (validatedId) {
         db.get('orders').push(order).write()
-        res.json({ ETA: order.ETA, orderNumber: order.orderNumber })
+        result.success = true
+        result.ETA = order.ETA
+        result.orderNumber = order.orderNumber
     } else {
         console.log('User not found')
-        res.end()
+        result.success = false
     }
+
+    res.json(result)
 })
 
 app.post('/api/account', (req, res) => {
     // add validation
     let userAccount = req.body
-    let account = db
-        .get('users')
-        .push({ id: nanoid(4), username: userAccount.username, password: userAccount.password })
-        .write()
+    let usernameExists = db.get('users').find({ username: userAccount.username }).value()
+    let result = {
+        usernameExists: false,
+    }
+    console.log(usernameExists)
 
-    res.json(account)
+    if (usernameExists) {
+        result.usernameExists = true
+    }
+    if (!usernameExists) {
+        result.usernameExists = false
+        db.get('users')
+            .push({ id: nanoid(4), username: userAccount.username, password: userAccount.password })
+            .write()
+    }
+
+    res.json(result)
 })
 
 app.get('/api/order/:id', (req, res) => {
     let ID = req.params.id
     let order = db.get('orders').filter({ userId: ID }).value()
     let completeOrder = []
+
+    if (order.length === 0) {
+        console.log('No user with that ID found')
+    }
 
     order.forEach((element) => {
         if (dayjs(element.ETA) < dayjs()) {
@@ -76,10 +96,6 @@ app.get('/api/order/:id', (req, res) => {
         completeOrder.push(element)
         console.log(dayjs(element.ETA) < dayjs())
     })
-
-    if (order.length === 0) {
-        console.log('No user with that ID found')
-    }
 
     res.json(completeOrder)
 })
