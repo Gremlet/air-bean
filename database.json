@@ -153,6 +153,20 @@
       "ETA": "May 4, 2021 10:16 AM",
       "orderNumber": "D_9xp",
       "userId": "dBr7"
+    },
+    {
+      "id": [
+        1,
+        3
+      ],
+      "title": [
+        "Bryggkaffe",
+        "Cappuccino"
+      ],
+      "price": 88,
+      "ETA": "May 4, 2021 10:43 AM",
+      "orderNumber": "PAjXh",
+      "userId": "dBr7"
     }
   ],
   "users": [
@@ -169,6 +183,11 @@
     {
       "id": "qS_C",
       "username": "Bob",
+      "password": 123
+    },
+    {
+      "id": "a_dp",
+      "username": "Alice",
       "password": 123
     }
   ]
