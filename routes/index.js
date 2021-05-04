@@ -13,7 +13,6 @@ router.post('/order', (req, res) => {
 })
 
 router.post('/account', (req, res) => {
-    // add validation
     let userAccount = req.body
     res.json(createAccount(userAccount))
 })
