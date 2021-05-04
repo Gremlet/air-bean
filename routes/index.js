@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { postOrder, getMenu, createAccount, getOrderHistory } = require('./dbHandlers')
+const { postOrder, getMenu, createAccount, getOrderHistory } = require('../dbHandlers')
 
 const router = new Router()
 

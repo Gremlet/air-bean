@@ -1,5 +1,5 @@
 const express = require('express')
-const { initiateDatabase } = require('./routes/dbHandlers')
+const { initiateDatabase } = require('./dbHandlers')
 const port = 8080
 const coffeeRouter = require('./routes/index')
 
