@@ -4,7 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json')
 const db = lowdb(adapter)
 const { nanoid } = require('nanoid')
-const moment = require('moment')
+const dayjs = require('dayjs')
 const port = 8080
 
 const app = express()
@@ -20,52 +20,84 @@ app.post('/api/order', (req, res) => {
     let userOrder = req.body
     let price = 0
     let title = []
+    let result = {}
+
     for (let i = 0; i < userOrder.id.length; i++) {
         let coffee = db.get('menu').find({ id: userOrder.id[i] }).value()
 
         title.push(coffee.title)
         price = price + coffee.price
     }
-    console.log(price)
-    console.log(title)
-    console.log(moment().add(15, 'm').format('LT'))
 
-    console.log(userOrder)
-    let order = db
-        .get('orders')
-        .push({
-            id: userOrder.id,
-            title: title,
-            price: price,
-            ETA: moment().add(15, 'm').format('lll'),
-            orderNumber: nanoid(5),
-            userId: userOrder.userId,
-        })
-        .write()
-    res.json(order)
+    let order = {
+        id: userOrder.id,
+        title: title,
+        price: price,
+        ETA: dayjs()
+            .add(Math.floor(Math.random() * (15 - 5 + 1)) + 5, 'm')
+            .format('MMM D, YYYY h:mm A'),
+        orderNumber: nanoid(5),
+        userId: userOrder.userId,
+    }
+
+    // validate userId
+    let validatedId = db.get('users').find({ id: userOrder.userId }).value()
+    if (validatedId) {
+        db.get('orders').push(order).write()
+        result.success = true
+        result.ETA = order.ETA
+        result.orderNumber = order.orderNumber
+    } else {
+        console.log('User not found')
+        result.success = false
+    }
+
+    res.json(result)
 })
 
 app.post('/api/account', (req, res) => {
+    // add validation
     let userAccount = req.body
-    let account = db
-        .get('users')
-        .push({ id: nanoid(4), username: userAccount.username, password: userAccount.password })
-        .write()
+    let usernameExists = db.get('users').find({ username: userAccount.username }).value()
+    let result = {
+        usernameExists: false,
+    }
+    console.log(usernameExists)
 
-    res.json(account)
+    if (usernameExists) {
+        result.usernameExists = true
+    }
+    if (!usernameExists) {
+        result.usernameExists = false
+        db.get('users')
+            .push({ id: nanoid(4), username: userAccount.username, password: userAccount.password })
+            .write()
+    }
+
+    res.json(result)
 })
 
 app.get('/api/order/:id', (req, res) => {
-    ID = req.params.id
-    let order = []
-    let orderList = db.get('orders').value()
-    for (let i = 0; i < orderList.length; i++) {
-        order = db.get('orders').filter({ userId: ID }).value()
+    let ID = req.params.id
+    let order = db.get('orders').filter({ userId: ID }).value()
+    let completeOrder = []
+
+    if (order.length === 0) {
+        console.log('No user with that ID found')
     }
 
-    console.log(order)
+    order.forEach((element) => {
+        if (dayjs(element.ETA) < dayjs()) {
+            element.status = 'Delivered'
+        }
+        if (dayjs(element.ETA) > dayjs()) {
+            element.status = 'Drone on the way'
+        }
+        completeOrder.push(element)
+        console.log(dayjs(element.ETA) < dayjs())
+    })
 
-    res.json(order)
+    res.json(completeOrder)
 })
 
 function initiateDatabase() {
@@ -74,7 +106,7 @@ function initiateDatabase() {
     db.defaults({ users: [] }).write()
 }
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log('Server started')
     initiateDatabase()
 })
