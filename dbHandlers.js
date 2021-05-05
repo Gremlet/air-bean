@@ -78,6 +78,7 @@ function createAccount(userAccount) {
 function getOrderHistory(ID) {
     let order = db.get('orders').filter({ userId: ID }).value()
     let completeOrder = []
+    let status = ''
 
     if (order.length === 0) {
         console.log('No order with that user ID found')
@@ -85,12 +86,25 @@ function getOrderHistory(ID) {
 
     order.forEach((element) => {
         if (dayjs(element.ETA) < dayjs()) {
-            element.status = 'Delivered'
+            status = 'Delivered'
         }
         if (dayjs(element.ETA) > dayjs()) {
-            element.status = 'Drone on the way'
+            let diff = dayjs(element.ETA).diff(dayjs(), 'm') + 1
+            if (diff === 1) {
+                status = `Coffee drone landing in ${diff} minute`
+            } else {
+                status = `Coffee drone landing in ${diff} minutes`
+            }
         }
-        completeOrder.push(element)
+        completeOrder.push({
+            id: element.id,
+            title: element.title,
+            price: element.price,
+            ETA: element.ETA,
+            orderNumber: element.orderNumber,
+            userId: element.userId,
+            status: status,
+        })
         console.log(dayjs(element.ETA) < dayjs())
     })
     return completeOrder
