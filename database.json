@@ -40,89 +40,86 @@
   "orders": [
     {
       "id": [
-        2,
-        5
+        1
       ],
       "title": [
-        "Caffè Doppio",
-        "Kaffe Latte"
+        "Bryggkaffe"
       ],
-      "price": 103,
-      "ETA": "May 3, 2021 5:22 PM",
-      "orderNumber": "meKED",
-      "userId": "Pquk",
-      "status": "Delivered"
+      "price": 39,
+      "ETA": "May 5, 2021 3:14 PM",
+      "orderNumber": "N1oTs",
+      "userId": "Pquk"
+    },
+    {
+      "id": [
+        5,
+        1
+      ],
+      "title": [
+        "Kaffe Latte",
+        "Bryggkaffe"
+      ],
+      "price": 93,
+      "ETA": "May 5, 2021 3:13 PM",
+      "orderNumber": "fNbJ0",
+      "userId": "Pquk"
     },
     {
       "id": [
         4,
-        5
+        2
       ],
       "title": [
         "Latte Macchiato",
-        "Kaffe Latte"
+        "Caffè Doppio"
       ],
-      "price": 103,
-      "ETA": "May 3, 2021 5:37 PM",
-      "orderNumber": "hKxtV",
-      "userId": "dBr7",
-      "status": "Delivered"
+      "price": 98,
+      "ETA": "May 5, 2021 3:19 PM",
+      "orderNumber": "so7-e",
+      "userId": "dBr7"
     },
     {
       "id": [
         6,
-        1
+        2
       ],
       "title": [
         "Cortado",
-        "Bryggkaffe"
-      ],
-      "price": 78,
-      "ETA": "May 4, 2021 9:30 AM",
-      "orderNumber": "jGC6T",
-      "userId": "Pquk",
-      "status": "Delivered"
-    },
-    {
-      "id": [
-        1,
-        4
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Latte Macchiato"
+        "Caffè Doppio"
       ],
       "price": 88,
-      "ETA": "May 4, 2021 1:26 PM",
-      "orderNumber": "PS68x",
-      "userId": "dBr7"
+      "ETA": "May 5, 2021 3:20 PM",
+      "orderNumber": "KXCpe",
+      "userId": "PFYF"
+    },
+    {
+      "id": [
+        4,
+        2
+      ],
+      "title": [
+        "Latte Macchiato",
+        "Caffè Doppio"
+      ],
+      "price": 98,
+      "ETA": "May 5, 2021 3:21 PM",
+      "orderNumber": "uZ8Rc",
+      "userId": "PFYF"
     },
     {
       "id": [
         1,
+        3,
         5
       ],
       "title": [
         "Bryggkaffe",
+        "Cappuccino",
         "Kaffe Latte"
       ],
-      "price": 93,
-      "ETA": "May 4, 2021 1:56 PM",
-      "orderNumber": "EkGa5",
-      "userId": "dBr7"
-    },
-    {
-      "id": [
-        2,
-        3
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Cappuccino"
-      ],
-      "price": 98,
-      "ETA": "May 4, 2021 1:56 PM",
-      "orderNumber": "SYTeS",
+      "price": 142,
+      "ETA": "May 5, 2021 3:32 PM",
+      "orderNumber": "gYupw",
       "userId": "PFYF"
     }
   ],
