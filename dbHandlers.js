@@ -84,11 +84,13 @@ function createAccount(userAccount) {
 
 function getOrderHistory(ID) {
     let order = db.get('orders').filter({ userId: ID }).value()
-    let completeOrder = []
+    let result = []
     let status = ''
 
     if (order.length === 0) {
         console.log('No order with that user ID found')
+        result.push('No order with that user ID found')
+        return result
     }
 
     order.forEach((element) => {
@@ -103,7 +105,7 @@ function getOrderHistory(ID) {
                 status = `Coffee drone landing in ${diff} minutes`
             }
         }
-        completeOrder.push({
+        result.push({
             id: element.id,
             title: element.title,
             price: element.price,
@@ -114,7 +116,7 @@ function getOrderHistory(ID) {
         })
         console.log(dayjs(element.ETA) < dayjs())
     })
-    return completeOrder
+    return result
 }
 
 exports.initiateDatabase = initiateDatabase
