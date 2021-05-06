@@ -54,6 +54,7 @@ function postOrder(userOrder) {
     } else {
         console.log('User not found')
         result.success = false
+        result.message = 'User not found'
     }
 
     return result
