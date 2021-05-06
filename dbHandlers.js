@@ -19,8 +19,14 @@ function postOrder(userOrder) {
     let price = 0
     let title = []
     let result = {}
+    let menu = db.get('menu').value()
 
     for (let i = 0; i < userOrder.id.length; i++) {
+        if (userOrder.id[i] > menu.length) {
+            result.success = false
+            result.message = `Coffee with id:${userOrder.id[i]} not found`
+            return result
+        }
         let coffee = db.get('menu').find({ id: userOrder.id[i] }).value()
 
         title.push(coffee.title)
@@ -63,7 +69,7 @@ function createAccount(userAccount) {
 
     if (usernameExists) {
         result.usernameExists = true
-        console.log('Username already exists')
+        result.message = 'Username already exists'
     }
     if (!usernameExists) {
         result.usernameExists = false
