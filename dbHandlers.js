@@ -15,6 +15,24 @@ function getMenu() {
     return db.get('menu').value()
 }
 
+function login(user) {
+    let result = {}
+    let validatedUser = db.get('users').find({ username: user.username }).value()
+
+    if (validatedUser && user.username === validatedUser.username && user.password === validatedUser.password) {
+        result = {
+            loggedIn: true,
+            userID: validatedUser.id,
+            username: validatedUser.username,
+            password: validatedUser.password,
+        }
+    } else {
+        result = { loggedIn: false }
+    }
+
+    return result
+}
+
 function postOrder(userOrder) {
     let price = 0
     let title = []
@@ -124,3 +142,4 @@ exports.getMenu = getMenu
 exports.postOrder = postOrder
 exports.createAccount = createAccount
 exports.getOrderHistory = getOrderHistory
+exports.login = login

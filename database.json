@@ -1,115 +1,91 @@
 {
-  "menu": [
-    {
-      "id": 1,
-      "title": "Bryggkaffe",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    },
-    {
-      "id": 2,
-      "title": "Caffè Doppio",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 3,
-      "title": "Cappuccino",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 4,
-      "title": "Latte Macchiato",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 5,
-      "title": "Kaffe Latte",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 54
-    },
-    {
-      "id": 6,
-      "title": "Cortado",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    }
-  ],
-  "orders": [
-    {
-      "id": [
-        5,
-        1
-      ],
-      "title": [
-        "Kaffe Latte",
-        "Bryggkaffe"
-      ],
-      "price": 93,
-      "ETA": "May 5, 2021 3:13 PM",
-      "orderNumber": "fNbJ0",
-      "userId": "Pquk"
-    },
-    {
-      "id": [
-        4,
-        2
-      ],
-      "title": [
-        "Latte Macchiato",
-        "Caffè Doppio"
-      ],
-      "price": 98,
-      "ETA": "May 5, 2021 3:19 PM",
-      "orderNumber": "so7-e",
-      "userId": "dBr7"
-    },
-    {
-      "id": [
-        1,
-        5
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Kaffe Latte"
-      ],
-      "price": 93,
-      "ETA": "May 6, 2021 12:55 PM",
-      "orderNumber": "5dEW2",
-      "userId": "PFYF"
-    },
-    {
-      "id": [
-        1,
-        5
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Kaffe Latte"
-      ],
-      "price": 93,
-      "ETA": "May 6, 2021 1:51 PM",
-      "orderNumber": "8F3RC",
-      "userId": "PFYF"
-    }
-  ],
-  "users": [
-    {
-      "id": "Pquk",
-      "username": "Ann",
-      "password": 123
-    },
-    {
-      "id": "dBr7",
-      "username": "William",
-      "password": 123
-    },
-    {
-      "id": "PFYF",
-      "username": "Alice",
-      "password": 123
-    }
-  ]
+    "menu": [
+        {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        },
+        {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 3,
+            "title": "Cappuccino",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 4,
+            "title": "Latte Macchiato",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 5,
+            "title": "Kaffe Latte",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 54
+        },
+        {
+            "id": 6,
+            "title": "Cortado",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        }
+    ],
+    "orders": [
+        {
+            "id": [5, 1],
+            "title": ["Kaffe Latte", "Bryggkaffe"],
+            "price": 93,
+            "ETA": "May 5, 2021 3:13 PM",
+            "orderNumber": "fNbJ0",
+            "userId": "Pquk"
+        },
+        {
+            "id": [4, 2],
+            "title": ["Latte Macchiato", "Caffè Doppio"],
+            "price": 98,
+            "ETA": "May 5, 2021 3:19 PM",
+            "orderNumber": "so7-e",
+            "userId": "dBr7"
+        },
+        {
+            "id": [1, 5],
+            "title": ["Bryggkaffe", "Kaffe Latte"],
+            "price": 93,
+            "ETA": "May 6, 2021 12:55 PM",
+            "orderNumber": "5dEW2",
+            "userId": "PFYF"
+        },
+        {
+            "id": [1, 5],
+            "title": ["Bryggkaffe", "Kaffe Latte"],
+            "price": 93,
+            "ETA": "May 6, 2021 1:51 PM",
+            "orderNumber": "8F3RC",
+            "userId": "PFYF"
+        }
+    ],
+    "users": [
+        {
+            "id": "Pquk",
+            "username": "Ann",
+            "password": "123"
+        },
+        {
+            "id": "dBr7",
+            "username": "William",
+            "password": "123"
+        },
+        {
+            "id": "PFYF",
+            "username": "Alice",
+            "password": "123"
+        }
+    ]
 }

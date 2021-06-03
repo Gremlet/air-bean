@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { postOrder, getMenu, createAccount, getOrderHistory } = require('../dbHandlers')
+const { postOrder, getMenu, createAccount, getOrderHistory, login } = require('../dbHandlers')
 
 const router = new Router()
 
@@ -20,6 +20,11 @@ router.post('/account', (req, res) => {
 router.get('/order/:id', (req, res) => {
     let ID = req.params.id
     res.json(getOrderHistory(ID))
+})
+
+router.post('/login', (req, res) => {
+    let user = req.body
+    res.json(login(user))
 })
 
 module.exports = router
