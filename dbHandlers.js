@@ -25,6 +25,8 @@ function login(user) {
             userID: validatedUser.id,
             username: validatedUser.username,
             password: validatedUser.password,
+            fullname: validatedUser.fullname,
+            email: validatedUser.email,
         }
     } else {
         result = { loggedIn: false }
@@ -94,7 +96,13 @@ function createAccount(userAccount) {
         result.usernameExists = false
         result.success = true
         db.get('users')
-            .push({ id: nanoid(4), username: userAccount.username, password: userAccount.password })
+            .push({
+                id: nanoid(4),
+                username: userAccount.username,
+                password: userAccount.password,
+                email: userAccount.email,
+                fullname: userAccount.fullname,
+            })
             .write()
     }
     return result
