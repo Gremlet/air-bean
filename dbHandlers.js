@@ -62,6 +62,7 @@ function postOrder(userOrder) {
             .format('MMM D, YYYY h:mm A'),
         orderNumber: nanoid(5),
         userId: userOrder.userId,
+        discount: userOrder.discount,
     }
 
     // validate userId
@@ -115,7 +116,7 @@ function getOrderHistory(ID) {
 
     if (order.length === 0) {
         console.log('No order with that user ID found')
-        result.push('No order with that user ID found')
+
         return result
     }
 
@@ -138,6 +139,7 @@ function getOrderHistory(ID) {
             ETA: element.ETA,
             orderNumber: element.orderNumber,
             userId: element.userId,
+            discount: element.discount,
             status: status,
         })
         console.log(dayjs(element.ETA) < dayjs())
