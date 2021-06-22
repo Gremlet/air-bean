@@ -1,209 +1,142 @@
 {
-  "menu": [
-    {
-      "id": 1,
-      "title": "Bryggkaffe",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    },
-    {
-      "id": 2,
-      "title": "Caffè Doppio",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 3,
-      "title": "Cappuccino",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 4,
-      "title": "Latte Macchiato",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 49
-    },
-    {
-      "id": 5,
-      "title": "Kaffe Latte",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 54
-    },
-    {
-      "id": 6,
-      "title": "Cortado",
-      "desc": "Bryggd på månadens bönor.",
-      "price": 39
-    },
-    {
-      "id": 7,
-      "title": "Gustav Adolfsbakelse",
-      "desc": "Limited edition for Gothenburg's 400th anniversary",
-      "price": 40
-    }
-  ],
-  "orders": [
-    {
-      "id": [
-        1,
-        4,
-        4
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Latte Macchiato",
-        "Latte Macchiato"
-      ],
-      "price": 137,
-      "ETA": "Jun 11, 2021 2:44 AM",
-      "orderNumber": "jWKg0",
-      "userId": "Pquk",
-      "discount": 0
-    },
-    {
-      "id": [
-        2,
-        3,
-        3,
-        4,
-        4,
-        4,
-        6
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Cappuccino",
-        "Cappuccino",
-        "Latte Macchiato",
-        "Latte Macchiato",
-        "Latte Macchiato",
-        "Cortado"
-      ],
-      "price": 333,
-      "ETA": "Jun 11, 2021 2:48 AM",
-      "orderNumber": "e2_KS",
-      "userId": "dBr7",
-      "discount": 0
-    },
-    {
-      "id": [
-        5,
-        1,
-        1,
-        7,
-        7
-      ],
-      "title": [
-        "Kaffe Latte",
-        "Bryggkaffe",
-        "Bryggkaffe",
-        "Gustav Adolfsbakelse",
-        "Gustav Adolfsbakelse"
-      ],
-      "price": 212,
-      "ETA": "Jun 11, 2021 8:18 PM",
-      "orderNumber": "R9Nar",
-      "userId": "Pquk",
-      "discount": 42
-    },
-    {
-      "id": [
-        1,
-        7
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Gustav Adolfsbakelse"
-      ],
-      "price": 79,
-      "ETA": "Jun 11, 2021 11:41 PM",
-      "orderNumber": "gbmgm",
-      "userId": "Pquk",
-      "discount": 21
-    },
-    {
-      "id": [
-        3,
-        1,
-        7
-      ],
-      "title": [
-        "Cappuccino",
-        "Bryggkaffe",
-        "Gustav Adolfsbakelse"
-      ],
-      "price": 128,
-      "ETA": "Jun 14, 2021 3:06 PM",
-      "orderNumber": "lW6Cm",
-      "userId": "Pquk",
-      "discount": 21
-    },
-    {
-      "id": [
-        1,
-        1,
-        7,
-        7,
-        5
-      ],
-      "title": [
-        "Bryggkaffe",
-        "Bryggkaffe",
-        "Gustav Adolfsbakelse",
-        "Gustav Adolfsbakelse",
-        "Kaffe Latte"
-      ],
-      "price": 212,
-      "ETA": "Jun 14, 2021 3:04 PM",
-      "orderNumber": "Kbim3",
-      "userId": "dBr7",
-      "discount": 42
-    },
-    {
-      "id": [
-        2,
-        3
-      ],
-      "title": [
-        "Caffè Doppio",
-        "Cappuccino"
-      ],
-      "price": 98,
-      "ETA": "Jun 14, 2021 5:31 PM",
-      "orderNumber": "fKIsg",
-      "userId": "dBr7",
-      "discount": 0
-    }
-  ],
-  "users": [
-    {
-      "id": "Pquk",
-      "username": "Ann",
-      "password": "123",
-      "email": "ann@iheartcoffee.com",
-      "fullname": "Ann Mathenge"
-    },
-    {
-      "id": "dBr7",
-      "username": "coffeecarl",
-      "password": "123",
-      "email": "carl@iheartcoffee.com",
-      "fullname": "Carl Cappuccino"
-    },
-    {
-      "id": "PFYF",
-      "username": "Alice",
-      "password": "123",
-      "email": "alice@iheartcoffee.com",
-      "fullname": "Alice Affogato"
-    },
-    {
-      "id": "MTzp",
-      "username": "Emma",
-      "password": "123",
-      "email": "emma@iheartcoffee.com",
-      "fullname": "Emma Espresso"
-    }
-  ]
+    "menu": [
+        {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        },
+        {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 3,
+            "title": "Cappuccino",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 4,
+            "title": "Latte Macchiato",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49
+        },
+        {
+            "id": 5,
+            "title": "Kaffe Latte",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 54
+        },
+        {
+            "id": 6,
+            "title": "Cortado",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39
+        },
+        {
+            "id": 7,
+            "title": "Gustav Adolfsbakelse",
+            "desc": "Limited edition for Gothenburg's 400th anniversary",
+            "price": 40
+        }
+    ],
+    "orders": [
+        {
+            "id": [2, 3, 3, 4, 4, 4, 6],
+            "title": [
+                "Caffè Doppio",
+                "Cappuccino",
+                "Cappuccino",
+                "Latte Macchiato",
+                "Latte Macchiato",
+                "Latte Macchiato",
+                "Cortado"
+            ],
+            "price": 333,
+            "ETA": "Jun 11, 2021 2:48 AM",
+            "orderNumber": "e2_KS",
+            "userId": "dBr7",
+            "discount": 0
+        },
+
+        {
+            "id": [1, 7],
+            "title": ["Bryggkaffe", "Gustav Adolfsbakelse"],
+            "price": 79,
+            "ETA": "Jun 11, 2021 11:41 PM",
+            "orderNumber": "gbmgm",
+            "userId": "Pquk",
+            "discount": 21
+        },
+        {
+            "id": [3, 1, 7],
+            "title": ["Cappuccino", "Bryggkaffe", "Gustav Adolfsbakelse"],
+            "price": 128,
+            "ETA": "Jun 14, 2021 3:06 PM",
+            "orderNumber": "lW6Cm",
+            "userId": "Pquk",
+            "discount": 21
+        },
+
+        {
+            "id": [2, 3],
+            "title": ["Caffè Doppio", "Cappuccino"],
+            "price": 98,
+            "ETA": "Jun 14, 2021 5:31 PM",
+            "orderNumber": "fKIsg",
+            "userId": "dBr7",
+            "discount": 0
+        },
+        {
+            "id": [2, 3, 3],
+            "title": ["Caffè Doppio", "Cappuccino", "Cappuccino"],
+            "price": 147,
+            "ETA": "Jun 15, 2021 2:55 PM",
+            "orderNumber": "TFusl",
+            "userId": "PFYF",
+            "discount": 0
+        },
+        {
+            "id": [2, 3, 4],
+            "title": ["Caffè Doppio", "Cappuccino", "Latte Macchiato"],
+            "price": 147,
+            "ETA": "Jun 16, 2021 1:38 AM",
+            "orderNumber": "O8gpA",
+            "userId": "Pquk",
+            "discount": 0
+        }
+    ],
+    "users": [
+        {
+            "id": "Pquk",
+            "username": "Ann",
+            "password": "123",
+            "email": "ann@iheartcoffee.com",
+            "fullname": "Ann Mathenge"
+        },
+        {
+            "id": "dBr7",
+            "username": "coffeecarl",
+            "password": "123",
+            "email": "carl@iheartcoffee.com",
+            "fullname": "Carl Cappuccino"
+        },
+        {
+            "id": "PFYF",
+            "username": "Alice",
+            "password": "123",
+            "email": "alice@iheartcoffee.com",
+            "fullname": "Alice Affogato"
+        },
+        {
+            "id": "MTzp",
+            "username": "Emma",
+            "password": "123",
+            "email": "emma@iheartcoffee.com",
+            "fullname": "Emma Espresso"
+        }
+    ]
 }
